@@ -58,7 +58,7 @@ namespace PicoGames.VLS2D
                 return;
 
             Gizmos.color = (isActive) ? _color : Color.gray;
-            Gizmos.DrawWireCube(bounds.center, bounds.size);
+			Gizmos.DrawWireCube(bounds.center, new Vector3(bounds.width, bounds.height,0));
         }
         #endregion
 
@@ -185,7 +185,7 @@ namespace PicoGames.VLS2D
             }
 
             bounds.Set(min.x, min.y, max.x - min.x, max.y - min.y);
-            bounds.center = (bounds.min + bounds.max) * 0.5f;
+			bounds.center = new Vector3( bounds.x + bounds.width * 0.5f, bounds.y + bounds.height * 0.5f, 0 );
         }
 
         // Hacky check to see if verts are going counter-clockwise. Might not work in all cases?

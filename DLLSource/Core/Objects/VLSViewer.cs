@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace PicoGames.VLS2D
 {
-    [ExecuteInEditMode, DisallowMultipleComponent]
+    [ExecuteInEditMode]
     public class VLSViewer : MonoBehaviour
     {
         //public static bool isQuiting = false;
@@ -195,7 +195,7 @@ namespace PicoGames.VLS2D
             Gizmos.color = new Color(0.8f, 0.3f, 0.3f, 1f);
             for (int i = 0; i < cameraList.Length; i++)
             {
-                Gizmos.DrawWireCube(cameraBoundList[i].center, cameraBoundList[i].size);
+				Gizmos.DrawWireCube(cameraBoundList[i].center, new Vector3( cameraBoundList[i].width, cameraBoundList[i].height, 0));
             }
         }
 

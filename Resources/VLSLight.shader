@@ -44,7 +44,7 @@ Shader "VLS2D/VLSLight" {
             struct VertexOutput {
                 float4 pos : SV_POSITION;
                 float2 uv0 : TEXCOORD0;
-                float4 vertexColor : COLOR;
+                float4 vertexColor : SV_TARGET;
             };
             VertexOutput vert (VertexInput v) {
                 VertexOutput o;
@@ -53,7 +53,7 @@ Shader "VLS2D/VLSLight" {
                 o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
                 return o;
             }
-            fixed4 frag(VertexOutput i) : COLOR {
+            fixed4 frag(VertexOutput i) : SV_TARGET {
 /////// Vectors:
 ////// Lighting:
 ////// Emissive:

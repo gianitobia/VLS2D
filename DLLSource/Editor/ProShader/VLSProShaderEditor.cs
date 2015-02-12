@@ -4,7 +4,7 @@ using System.Collections;
 
 namespace PicoGames.VLS2D
 {
-    [CustomEditor(typeof(VLSProShader)), DisallowMultipleComponent]
+    [CustomEditor(typeof(VLSProShader))]
     public class VLSProShaderEditor : Editor
     {
         public static string[] LightPassList = new string[0];

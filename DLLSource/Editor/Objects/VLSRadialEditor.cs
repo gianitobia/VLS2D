@@ -25,13 +25,11 @@ namespace PicoGames.VLS2D
             rotation = (serializedObject.targetObject as VLSRadial).transform.rotation;
             localScale = (serializedObject.targetObject as VLSRadial).transform.localScale;
 
-            Tools.hidden = true;
             base.OnEnable();
         }
 
         protected override void OnDisable()
         {
-            Tools.hidden = false;
             base.OnDisable();
         }
 

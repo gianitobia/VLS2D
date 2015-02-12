@@ -25,7 +25,6 @@ namespace PicoGames.VLS2D
         protected virtual void OnDisable()
         {
             EditorPrefs.SetBool("SHOW_NORMALS", VLSBehaviour.SHOW_NORMALS);
-            Tools.hidden = false;
         }
 
         protected void ShowEdgeInspector()
@@ -75,7 +74,6 @@ namespace PicoGames.VLS2D
             if (Handles.Button(obst.transform.position, Quaternion.identity, guiSize * 1.5f, guiSize * 2, Handles.CircleCap))
             {
                 selectedVertices.Clear();
-                Tools.hidden = false;
                 //Tools.current = prevTool;
             }
 
@@ -95,7 +93,6 @@ namespace PicoGames.VLS2D
                             selectedVertices.Add(index);
 
                             GUI.changed = true;
-                            Tools.hidden = true;
                         }
                     }
                 }
@@ -127,8 +124,6 @@ namespace PicoGames.VLS2D
                             selectedVertices.Clear();
                             selectedVertices.Add(i);
                         }
-
-                        Tools.hidden = true;
                     }
                 }
 
@@ -140,7 +135,7 @@ namespace PicoGames.VLS2D
                     Vector3 delta = Handles.PositionHandle(tPos, (Tools.pivotRotation == PivotRotation.Global) ? Quaternion.identity : obst.transform.rotation) - tPos;
 
                     for (int i = 0; i < selectedVertices.Count; i++)
-                        obst.LocalVertex(selectedVertices[i], obst.LocalVertex(selectedVertices[i]) + transform.InverseTransformVector(delta));
+						obst.LocalVertex(selectedVertices[i], obst.LocalVertex(selectedVertices[i]) + transform.rotation*delta);
 
                     if (e.isKey && (e.keyCode == KeyCode.Backspace))
                     {

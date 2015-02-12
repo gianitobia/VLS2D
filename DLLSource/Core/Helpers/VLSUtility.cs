@@ -166,6 +166,10 @@ namespace PicoGames.VLS2D
                             VLSViewer.VisibleObstructions[o].edges[VLSViewer.VisibleObstructions[o].edges.Count - 1].IsEnd = true;
                         }
                     }
+					else{
+						Debug.Log(VLSViewer.VisibleObstructions[o].bounds);
+						Debug.Log(_light.bounds);
+					}
                 }
             }
             #endregion

@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace PicoGames.VLS2D
 {
-    [ExecuteInEditMode, RequireComponent(typeof(MeshFilter), typeof(MeshRenderer)), DisallowMultipleComponent]
+    [ExecuteInEditMode, RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
     public abstract class VLSLight : VLSBehaviour
     {
         public bool IsStatic 

@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace PicoGames.VLS2D
 {
-    [ExecuteInEditMode, DisallowMultipleComponent]
+    [ExecuteInEditMode]
     public class VLSBasicShader : MonoBehaviour
     {
         public Color ambientColor = new Color(0.3f, 0.3f, 0.35f, 0.8f);

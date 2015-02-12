@@ -9,8 +9,7 @@ using System.Collections.Generic;
 
 namespace PicoGames.VLS2D
 {            
-    [AddComponentMenu("VLS2D (2D Lights)/Camera/Pro Shader", -5), RequireComponent(typeof(Camera)), ExecuteInEditMode, DisallowMultipleComponent]
-    public class VLSProShader : MonoBehaviour
+	[AddComponentMenu("VLS2D (2D Lights)/Camera/Pro Shader"), RequireComponent(typeof(Camera)), ExecuteInEditMode]    public class VLSProShader : MonoBehaviour
     {
         #region Public Variables
         [SerializeField]
